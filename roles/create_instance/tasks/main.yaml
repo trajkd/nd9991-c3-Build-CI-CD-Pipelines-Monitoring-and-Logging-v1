@@ -20,6 +20,7 @@
     region: us-west-2
     group_id:
       - sg-0b338f39f12f59a44
+      - sg-0a89028c1624ec92a
     wait: yes
     instance_tags:
       Name: web_server
