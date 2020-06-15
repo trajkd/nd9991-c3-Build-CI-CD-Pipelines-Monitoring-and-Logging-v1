@@ -8,8 +8,8 @@
       - us-west-2a
     listeners:
       - protocol: http
-        load_balancer_port: 80
-        instance_port: 80
+        load_balancer_port: 8080
+        instance_port: 8080
   register: elb
 
 - name: Create EC2 instances
@@ -33,7 +33,7 @@
 - name: Wait for servers to come online
   wait_for:
     host: "{{ item.public_ip }}"
-    port: 80
+    port: 8080
     timeout: 180
   with_items: "{{ ec2_instances.tagged_instances }}"
   ignore_errors: True
